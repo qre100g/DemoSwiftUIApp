@@ -24,7 +24,7 @@ struct ContentView: View {
         Color.red
             .frame(height: 50)
             .overlay {
-                Text("View \(index)")
+                Text("Color \(index)")
                     .foregroundStyle(.white)
             }
     }
