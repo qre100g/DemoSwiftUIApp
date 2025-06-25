@@ -9,16 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            ForEach(0..<20) { i in
-                Color.red
-                    .frame(height: 50)
-                    .overlay {
-                        Text("View \(i)")
-                            .foregroundStyle(.white)
-                    }
+        NavigationStack {
+            ScrollView {
+                ForEach(0..<20) { i in
+                    colorView(at: i)
+                }
+                .padding(.horizontal, 10)
             }
+            .navigationTitle("Scroll view")
         }
+    }
+    
+    func colorView(at index: Int) -> some View {
+        Color.red
+            .frame(height: 50)
+            .overlay {
+                Text("View \(index)")
+                    .foregroundStyle(.white)
+            }
     }
 }
 
